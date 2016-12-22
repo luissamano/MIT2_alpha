@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.luissam.mit.Fragments.FiveFrag;
 import com.example.luissam.mit.Fragments.FourFrag;
+import com.example.luissam.mit.Fragments.InicialFrag;
 import com.example.luissam.mit.Fragments.OneFrag;
 import com.example.luissam.mit.Fragments.SixFrag;
 import com.example.luissam.mit.Fragments.ThreeFrag;
@@ -35,7 +36,8 @@ public class MainActivity extends AppCompatActivity
         ThreeFrag.OnFragmentInteractionListener,
         FourFrag.OnFragmentInteractionListener,
         FiveFrag.OnFragmentInteractionListener,
-        SixFrag.OnFragmentInteractionListener{
+        SixFrag.OnFragmentInteractionListener,
+        InicialFrag.OnFragmentInteractionListener{
 
 
     FragmentManager fragmentManager = getSupportFragmentManager();
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity
 
         fragmentManager.beginTransaction()
                 .replace(R.id.contenedor,
-                        new OneFrag())
+                        new InicialFrag())
                 .commit();
     }
 
@@ -111,7 +113,14 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.pem) {
+        if (id == R.id.home)  {
+
+            fragmentManager.beginTransaction()
+                    .replace(R.id.contenedor,
+                            new InicialFrag())
+                    .commit();
+
+        } else if (id == R.id.pem) {
 
             fragmentManager.beginTransaction()
                     .replace(R.id.contenedor,

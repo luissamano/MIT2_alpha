@@ -29,7 +29,7 @@
                 android:layout_weight="1" />
 
             <Button
-                android:drawableLeft="@drawable/ic_menu_manage"
+                android:drawableLeft="@drawable/search"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/button" />
